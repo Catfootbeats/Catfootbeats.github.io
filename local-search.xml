@@ -63,11 +63,17 @@
   
   <entry>
     <title>Control插件</title>
-    <link href="/2022/10/18/contral/"/>
-    <url>/2022/10/18/contral/</url>
+    <link href="/1919/08/10/contral/"/>
+    <url>/1919/08/10/contral/</url>
     
     <content type="html"><![CDATA[<h1 id="Control"><a href="#Control" class="headerlink" title="Control"></a>Control</h1><p>一个极其极其极其简单的基于 mirai 和 mirai-console 的聊天控制Bot的mirai-console插件<br><a href="https://github.com/Catfootbeats/mirai-contral">项目地址</a><br><a href="https://github.com/Catfootbeats/mirai-contral/releases">下载地址</a></p><h2 id="使用方法"><a href="#使用方法" class="headerlink" title="使用方法"></a>使用方法</h2><p>首先在config\xyz.catfootbeats.control\Setting.yml里设置模式和主人ID<br>(设置完成后需要重启mirai-console)</p><ul><li><code>/ctrl help</code>获取帮助</li><li><code>/ctrl send &lt;消息&gt; &lt;目标群(空时为本群)&gt;</code>让Bot在&lt;目标群&gt;发送&lt;消息&gt;</li><li><code>/recall &lt;引用&gt;</code> 撤回Bot自己的消息</li></ul><p>p.s.初次尝试写插件，项目里n个if else，很多地方也很拙劣，如果有什么问题或建议还请各位大佬指出ヾ(•ω•&#96;)o</p>]]></content>
     
+    
+    <categories>
+      
+      <category>项目</category>
+      
+    </categories>
     
     
   </entry>
