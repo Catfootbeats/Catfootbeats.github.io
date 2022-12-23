@@ -4,6 +4,25 @@
   
   
   <entry>
+    <title>neovim配置</title>
+    <link href="/2022/12/23/neovim%E9%85%8D%E7%BD%AE/"/>
+    <url>/2022/12/23/neovim%E9%85%8D%E7%BD%AE/</url>
+    
+    <content type="html"><![CDATA[<h1 id="neovim配置"><a href="#neovim配置" class="headerlink" title="neovim配置"></a>neovim配置</h1><p><a href="https://github.com/Catfootbeats/nvim">配置地址</a></p><h1 id="插件"><a href="#插件" class="headerlink" title="#插件"></a>#插件</h1><ul><li><p>更新安装 PackerSync</p></li><li><p>卸载插件 把要卸载的插件注释或者删除掉 PackerClean</p></li></ul><h1 id="操作指南"><a href="#操作指南" class="headerlink" title="#操作指南"></a>#操作指南</h1><h4 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h4><ul><li><p>保存 <code>Ctrl + S</code></p></li><li><p>退出 <code>Ctrl + Q</code></p></li><li><p>插入模式光标移动</p><p>左 <code>Ctrl + [</code></p><p>右 <code>Ctrl + ]</code></p><p>上 <code>Ctrl + P</code></p><p>下 <code>Ctrl + N</code></p></li><li><p>退出插入模式 <code>jk</code></p></li><li><p><code>Alt + hjkl</code>选择窗口</p></li><li><p><code>s v/h</code> 分屏</p></li><li><p><code>s c</code> 关闭分屏</p></li></ul><h4 id="自动补全cmp"><a href="#自动补全cmp" class="headerlink" title="自动补全cmp"></a>自动补全cmp</h4><ul><li><p><code>Ctrl + j k</code> 上下移动</p></li><li><p><code>Ctrl + f b</code> 滚动描述窗口大小</p></li><li><p><code>Ctrl + Space</code> 好像不管用</p></li><li><p><code>Ctrl + e</code> 关闭边栏</p></li><li><p>回车确认</p></li><li><p><code>tab</code> 比如，确认之后，出现一个方法的模板，填充完名称按Tab跳转到参数，再按跳转到代码块</p></li></ul><p>设置请到 <code>cmp.lua</code></p><ul><li><p><code>formatting</code> 可调整弹出的窗口 <code>source</code> 改变顺序</p></li><li><p><code>ghosttext</code> 水印提示</p></li></ul><h4 id="LSP"><a href="#LSP" class="headerlink" title="LSP"></a>LSP</h4><ul><li><p><code>:LspInstall</code> 安装的lsp server</p></li><li><p><code>Shift + K</code> 相当于悬停</p></li><li><p><code>gd</code> 走到定义</p></li><li><p><code>gD</code> 走到声明</p></li><li><p><code>gi</code> 走到实现</p></li><li><p><code>Ctrl + k</code> 签名帮助(?)</p></li><li><p><code>gr</code> 引用</p></li><li><p><code>[d</code> <code>]d</code> 前后报错</p></li><li><p><code>&lt;loader&gt;q</code> 错误列表(<loader>目前设置为<code>\</code>)</p></li><li><p><code>&lt;loader&gt;ca</code> 快速修复</p></li><li><p><code>&lt;loader&gt;rn</code> 重命名</p></li><li><p>添加语言支持在 <code>mason.lua</code> 的server加，使用 <code>:LspInstall &lt;server&gt;</code> 命令安装，在settings里面添加设置。</p><p>具体见<a href="https://github.com/williamboman/mason-lspconfig.nvim">mason-lspconfig.nvim</a>,<a href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md">设置</a></p><p><code>cmd = &#123;DATA_PATH .. &#39;/lspinstall/cmake/venv/bin/&lt;server&gt;&#39;&#125;</code>添加的cmd大概写成这样,文件名不行就试试后面加-ls</p></li><li><p>注：C#提示依赖Visual Studio工程文件</p><p>C++需要导出数据库 <code>cmake -S ./ -B build -DCMAKE_EXPORT_COMPILE_COMMANDS=1</code></p></li></ul><h4 id="CMake相关快捷键"><a href="#CMake相关快捷键" class="headerlink" title="CMake相关快捷键"></a>CMake相关快捷键</h4><ul><li><code>&lt;leader&gt;&lt;leader&gt;s</code> <code>cmake -S . -B build -DCMAKE_EXPORT_COMPILE_COMMANDS=1</code></li><li><code>&lt;leader&gt;&lt;leader&gt;b</code> <code>cmake --build build -j2</code></li><li><code>&lt;leader&gt;&lt;leader&gt;t</code> <code>cmake --build build -j2 --target test</code></li></ul><h4 id="查找功能"><a href="#查找功能" class="headerlink" title="查找功能"></a>查找功能</h4><ul><li><code>&lt;leader&gt;ff</code> 查找文件</li><li><code>&lt;leader&gt;fg</code> 查找片段</li><li><code>&lt;leader&gt;fb</code> 在打开的文件里面查找</li><li><code>&lt;leader&gt;fh</code> 查找帮助文档</li><li><code>&lt;leader&gt;sf</code></li><li><code>&lt;leader&gt;/</code> 不知道有啥意义</li><li>lua\user\plugin-config\telescope.lua 自己看罢(</li></ul><h4 id="Debugger"><a href="#Debugger" class="headerlink" title="Debugger"></a>Debugger</h4><ul><li>DIInstall <code>Tab</code> 安装 DIList 验证</li></ul><h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><ul><li><p><code>&lt;leader&gt;py</code> 运行python</p></li><li><p>在文件浏览器按<code>s</code>可以运行程序</p></li><li><p>Linux或者OSX可以安装 <code>lolcat</code> 去 <code>dashboard.lua</code> 开启彩虹首页</p></li><li><p>可在项目目录里面创建一个 <code>run.bat</code> 或者 <code>run.sh</code> ,使用 <code>&lt;leader&gt;&lt;leader&gt;r</code> 运行</p></li><li><p><code>:checkhealth</code> 检查是否配置完成</p></li><li><p><code>;</code> 或者普通模式 <code>ff</code> 格式化代码</p></li><li><p><code>Ctrl + \</code> 打开终端 Windows Terminal也可以直接 <code>Win + 飘号键</code> 打开Windows Terminal自带的终端</p></li><li><p>Gitsigns命令 git功能</p></li><li><p><code>gcc</code>注释</p></li><li><p><a href="https://github.com/simrat39/symbols-outline.nvim">文件大纲</a> <code>&lt;leader&gt;o</code> 开启关闭大纲</p></li><li><p>命令模式输入Tab提示</p></li><li><p><code>Enter</code>增量选择 <code>Backspace</code>减量选择</p></li><li><p>代码格式化 <code>=</code> 全部格式化 <code>ggvG=</code> or <code>gg=G</code></p></li><li><p>折叠代码 <code>zc</code> <code>zo</code></p></li></ul>]]></content>
+    
+    
+    
+    <tags>
+      
+      <tag>neovim</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>原子结构</title>
     <link href="/2022/12/22/%E5%8E%9F%E5%AD%90%E7%BB%93%E6%9E%84/"/>
     <url>/2022/12/22/%E5%8E%9F%E5%AD%90%E7%BB%93%E6%9E%84/</url>
