@@ -24,7 +24,7 @@
 <meta property="og:description" content="vscode CMake vcpkg 配置SDL2和spdlog踩的亿些坑配置过程，讲讲Windows，Linux就方便多了用系统的包管理器直接装就行vcpkg先照着GitHub上vcpkg的官方教程安装vcpkg，再打开vscode，Ctrl + Shift + P 输入 setting.json 打开用户配置，加一条 12345678910&quot;cmake.configureSettin">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-12-30T13:45:24.000Z">
-<meta property="article:modified_time" content="2022-12-31T00:48:24.411Z">
+<meta property="article:modified_time" content="2023-01-17T01:24:20.882Z">
 <meta property="article:author" content="Catfootbeats">
 <meta property="article:tag" content="CMake">
 <meta property="article:tag" content="VSCode">
@@ -237,7 +237,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.6k 字
+          1.7k 字
         
       </span>
     
@@ -320,7 +320,9 @@
 <p>后来在互联网的一个小角落找到了vcpkg无法引入SDL2的解决办法，引入了之后莫名其妙解决了上面的问题。</p>
 <p>也许这就是传说中的 Windows Magic 吧 (～￣▽￣)～</p>
 </blockquote>
-<h3 id="如果你用clangd作为vscode的lsp（老色批）写得稍微多点就可能会发现提示找不到-strings-h"><a href="#如果你用clangd作为vscode的lsp（老色批）写得稍微多点就可能会发现提示找不到-strings-h" class="headerlink" title="如果你用clangd作为vscode的lsp（老色批）写得稍微多点就可能会发现提示找不到 strings.h"></a>如果你用clangd作为vscode的lsp（<del>老色批</del>）写得稍微多点就可能会发现提示找不到 <code>strings.h</code></h3><p>clangd找不到你编译器的库，这里需要手动告诉它。</p>
+<h3 id="如果你用clangd作为vscode的lsp（老色批）Windows下就可能会发现提示找不到-strings-h"><a href="#如果你用clangd作为vscode的lsp（老色批）Windows下就可能会发现提示找不到-strings-h" class="headerlink" title="如果你用clangd作为vscode的lsp（老色批）Windows下就可能会发现提示找不到 strings.h"></a>如果你用clangd作为vscode的lsp（<del>老色批</del>）Windows下就可能会发现提示找不到 <code>strings.h</code></h3><p>直接跳转到对应的SDL2 <code>#include &lt;strings.h&gt;</code> 直接注释掉即可</p>
+<p>下面全部作废：</p>
+<p>clangd找不到你编译器的库，这里需要手动告诉它。</p>
 <p>在vscode的设置里面找到clangd，在Argument项目里面写上 <code>--include-dir=&#123;你的mingw位置&#125;/x86_64-w64-mingw32/include</code></p>
 <blockquote>
 <p>鼠标放到Argument上面点出现的小齿轮可以设置这项是否同步</p>
