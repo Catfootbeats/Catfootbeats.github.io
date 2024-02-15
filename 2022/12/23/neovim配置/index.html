@@ -505,6 +505,33 @@
             </div>
 
             
+  
+  
+    <article id="comments" lazyload>
+      
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    Fluid.utils.loadComments('#gitalk-container', function() {
+      Fluid.utils.createCssLink('/css/gitalk.css')
+      Fluid.utils.createScript('https://lib.baomitu.com/gitalk/1.8.0/gitalk.min.js', function() {
+        var options = Object.assign(
+          {"clientID":"d7acafdd02d6c7911eb6","clientSecret":"2bf399e67a4efef324327d42b645bca1503c52c5","repo":"Catfootbeats.github.io","owner":"Catfootbeats","admin":["Catfootbeats"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
+          {
+            id: 'c57fe0891186a682caed69f43d2926e1'
+          }
+        )
+        var gitalk = new Gitalk(options);
+        gitalk.render('gitalk-container');
+      });
+    });
+  </script>
+  <noscript>Please enable JavaScript to view the comments</noscript>
+
+
+    </article>
+  
+
+
           </article>
         </div>
       </div>
@@ -597,7 +624,7 @@
     <div class="footer-inner">
   
     <div class="footer-content">
-       <a href="https://icp.gov.moe/?keyword=20240309" target="_blank">萌ICP备20240309号</a> <br> 祝你今天依然开心！(～￣▽￣)～ <br> © Catfootbeats 2024 <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <br> 
+       祝你今天依然开心！(～￣▽￣)～ <br> © Catfootbeats 2024 <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> <br> <a href="https://icp.gov.moe/?keyword=20240309" target="_blank">萌ICP备20240309号</a> 
     </div>
   
   
