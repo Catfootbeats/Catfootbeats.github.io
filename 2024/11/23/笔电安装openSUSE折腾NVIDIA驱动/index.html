@@ -16,26 +16,25 @@
   <meta name="author" content="Catfootbeats">
   <meta name="keywords" content="">
   
-    <meta name="description" content="Real-Time Rendering 4th Edition 阅读笔记0 图形渲染管线看了看 Real-Time Rendering 4th Edition ，姑且写一些不是很准确的理解，做参考。若有错误，欢迎指正。 图形渲染管线图形渲染管线（Graphics Rendering Pipeline，简称GPU）是图形处理器（Graphics Processing Unit，简称GPU）上执行的指">
+    <meta name="description" content="笔电安装openSUSE折腾NVIDIA驱动安装驱动SDB:NVIDIA_驱动 配置独显SDB:NVIDIA PRIME Render Offload 装上显卡驱动之后发现笔电的HDMI接口不能输出了（Wayland），但是x11可以输出。 x11显示器输出并不可以单独调整dpi。 为了单独修改dpi，只能使用Wayland。 解决HDMI输出问题就要使用Offload来调用独显输出，安全模式还要">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Real-Time Rendering 4th Edition 阅读笔记0 图形渲染管线">
-<meta property="og:url" content="https://catfootbeats.github.io/2024/02/14/Real-Time-Rendering-4th-Edition-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B00-%E5%9B%BE%E5%BD%A2%E6%B8%B2%E6%9F%93%E7%AE%A1%E7%BA%BF/index.html">
+<meta property="og:title" content="笔电安装openSUSE折腾NVIDIA驱动">
+<meta property="og:url" content="https://catfootbeats.github.io/2024/11/23/%E7%AC%94%E7%94%B5%E5%AE%89%E8%A3%85openSUSE%E6%8A%98%E8%85%BENVIDIA%E9%A9%B1%E5%8A%A8/index.html">
 <meta property="og:site_name" content="Catfootbeats&#39;Blog(～￣▽￣)～">
-<meta property="og:description" content="Real-Time Rendering 4th Edition 阅读笔记0 图形渲染管线看了看 Real-Time Rendering 4th Edition ，姑且写一些不是很准确的理解，做参考。若有错误，欢迎指正。 图形渲染管线图形渲染管线（Graphics Rendering Pipeline，简称GPU）是图形处理器（Graphics Processing Unit，简称GPU）上执行的指">
+<meta property="og:description" content="笔电安装openSUSE折腾NVIDIA驱动安装驱动SDB:NVIDIA_驱动 配置独显SDB:NVIDIA PRIME Render Offload 装上显卡驱动之后发现笔电的HDMI接口不能输出了（Wayland），但是x11可以输出。 x11显示器输出并不可以单独调整dpi。 为了单独修改dpi，只能使用Wayland。 解决HDMI输出问题就要使用Offload来调用独显输出，安全模式还要">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-02-14T14:53:26.000Z">
-<meta property="article:modified_time" content="2024-02-14T15:25:17.600Z">
+<meta property="article:published_time" content="2024-11-23T15:43:15.000Z">
+<meta property="article:modified_time" content="2024-11-23T15:55:25.114Z">
 <meta property="article:author" content="Catfootbeats">
-<meta property="article:tag" content="图形学">
-<meta property="article:tag" content="渲染管线">
-<meta property="article:tag" content="读书笔记">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="驱动">
 <meta name="twitter:card" content="summary_large_image">
   
   
     <meta name="referrer" content="no-referrer-when-downgrade">
   
   
-  <title>Real-Time Rendering 4th Edition 阅读笔记0 图形渲染管线 - Catfootbeats&#39;Blog(～￣▽￣)～</title>
+  <title>笔电安装openSUSE折腾NVIDIA驱动 - Catfootbeats&#39;Blog(～￣▽￣)～</title>
 
   <link  rel="stylesheet" href="https://lib.baomitu.com/twitter-bootstrap/4.6.1/css/bootstrap.min.css" />
 
@@ -213,7 +212,7 @@
       <div class="banner-text text-center fade-in-up">
         <div class="h2">
           
-            <span id="subtitle" data-typed-text="Real-Time Rendering 4th Edition 阅读笔记0 图形渲染管线"></span>
+            <span id="subtitle" data-typed-text="笔电安装openSUSE折腾NVIDIA驱动"></span>
           
         </div>
 
@@ -224,8 +223,8 @@
     
       <span class="post-meta">
         <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-        <time datetime="2024-02-14 22:53" pubdate>
-          2024年2月14日 晚上
+        <time datetime="2024-11-23 23:43" pubdate>
+          2024年11月23日 晚上
         </time>
       </span>
     
@@ -236,7 +235,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          553 字
+          268 字
         
       </span>
     
@@ -247,7 +246,7 @@
         
         
         
-          5 分钟
+          3 分钟
         
       </span>
     
@@ -285,25 +284,19 @@
         <div id="board">
           <article class="post-content mx-auto">
             <!-- SEO header -->
-            <h1 style="display: none">Real-Time Rendering 4th Edition 阅读笔记0 图形渲染管线</h1>
+            <h1 style="display: none">笔电安装openSUSE折腾NVIDIA驱动</h1>
             
             
               <div class="markdown-body">
                 
-                <h1 id="Real-Time-Rendering-4th-Edition-阅读笔记0-图形渲染管线"><a href="#Real-Time-Rendering-4th-Edition-阅读笔记0-图形渲染管线" class="headerlink" title="Real-Time Rendering 4th Edition 阅读笔记0 图形渲染管线"></a>Real-Time Rendering 4th Edition 阅读笔记0 图形渲染管线</h1><p>看了看 Real-Time Rendering 4th Edition ，姑且写一些不是很准确的理解，做参考。若有错误，欢迎指正。</p>
-<h2 id="图形渲染管线"><a href="#图形渲染管线" class="headerlink" title="图形渲染管线"></a>图形渲染管线</h2><p>图形渲染管线（Graphics Rendering Pipeline，简称GPU）是图形处理器（Graphics Processing Unit，简称GPU）上执行的指令序列，用于将3D场景转换为2D图像。图形渲染管线由一系列的阶段（Stage）组成，每个阶段执行不同的任务。（以上为AI生成，我懒得写了）</p>
-<p>如同福特把流水线引入汽车制造，图形渲染管线是为了计算图形而引入的一套流水线。这套流水线在这本书中主要有四个主要阶段：</p>
-<ol>
-<li><p>应用阶段（Application）</p>
-</li>
-<li><p>几何处理阶段（Geometry Processing）</p>
-</li>
-<li><p>光栅化阶段（Rasterization）</p>
-</li>
-<li><p>像素处理阶段（Pixel Processing）也叫片元处理阶段（Fragment Processing）</p>
-</li>
-</ol>
-<h3 id="应用阶段"><a href="#应用阶段" class="headerlink" title="应用阶段"></a>应用阶段</h3><p>应用阶段主要发生在CPU上，开发者对此阶段的控制是相对自由的。有一些任务也可以在GPU上运行。即通过使⽤⼀个叫<br>做计算着⾊器（compute shader）的独⽴模式，该模式会将 GPU 视为⼀个⾼度并⾏<br>的通⽤处理器，⽽忽略其专⻔⽤于图形渲染的特殊功能。</p>
+                <h1 id="笔电安装openSUSE折腾NVIDIA驱动"><a href="#笔电安装openSUSE折腾NVIDIA驱动" class="headerlink" title="笔电安装openSUSE折腾NVIDIA驱动"></a>笔电安装openSUSE折腾NVIDIA驱动</h1><p>安装驱动<a target="_blank" rel="noopener" href="https://zh.opensuse.org/SDB:NVIDIA_%E9%A9%B1%E5%8A%A8">SDB:NVIDIA_驱动</a></p>
+<p>配置独显<a target="_blank" rel="noopener" href="https://zh.opensuse.org/SDB:NVIDIA_PRIME_Render_Offload">SDB:NVIDIA PRIME Render Offload</a></p>
+<p>装上显卡驱动之后发现笔电的HDMI接口不能输出了（Wayland），但是x11可以输出。</p>
+<p>x11显示器输出并不可以单独调整dpi。</p>
+<p>为了单独修改dpi，只能使用Wayland。</p>
+<p>解决HDMI输出问题就要使用Offload来调用独显输出，安全模式还要配置一下NVIDIA驱动的密钥。</p>
+<p>使用Offload需要在内核参数里面加一条<code>nvidia-drm.modeset=1</code></p>
+<p>然后就能使用独显输出的HDMI接口了。</p>
 
                 
               </div>
@@ -322,7 +315,7 @@
     
       <span class="category-chain">
         
-  <a href="/categories/Real-Time-Rendering-4th-Edition-%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/" class="category-chain-item">Real-Time Rendering 4th Edition 读书笔记</a>
+  <a href="/categories/linux/" class="category-chain-item">linux</a>
   
   
 
@@ -337,11 +330,9 @@
     <div class="post-meta">
       <i class="iconfont icon-tags"></i>
       
-        <a href="/tags/%E5%9B%BE%E5%BD%A2%E5%AD%A6/">#图形学</a>
+        <a href="/tags/linux/">#linux</a>
       
-        <a href="/tags/%E6%B8%B2%E6%9F%93%E7%AE%A1%E7%BA%BF/">#渲染管线</a>
-      
-        <a href="/tags/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">#读书笔记</a>
+        <a href="/tags/%E9%A9%B1%E5%8A%A8/">#驱动</a>
       
     </div>
   
@@ -353,8 +344,8 @@
 
   <div class="license-box my-3">
     <div class="license-title">
-      <div>Real-Time Rendering 4th Edition 阅读笔记0 图形渲染管线</div>
-      <div>https://catfootbeats.github.io/2024/02/14/Real-Time-Rendering-4th-Edition-阅读笔记0-图形渲染管线/</div>
+      <div>笔电安装openSUSE折腾NVIDIA驱动</div>
+      <div>https://catfootbeats.github.io/2024/11/23/笔电安装openSUSE折腾NVIDIA驱动/</div>
     </div>
     <div class="license-meta">
       
@@ -366,7 +357,7 @@
       
         <div class="license-meta-item license-meta-date">
           <div>发布于</div>
-          <div>2024年2月14日</div>
+          <div>2024年11月23日</div>
         </div>
       
       
@@ -398,18 +389,12 @@
                   <article class="post-prev col-6">
                     
                     
-                      <a href="/2024/11/23/%E7%AC%94%E7%94%B5%E5%AE%89%E8%A3%85openSUSE%E6%8A%98%E8%85%BENVIDIA%E9%A9%B1%E5%8A%A8/" title="笔电安装openSUSE折腾NVIDIA驱动">
-                        <i class="iconfont icon-arrowleft"></i>
-                        <span class="hidden-mobile">笔电安装openSUSE折腾NVIDIA驱动</span>
-                        <span class="visible-mobile">上一篇</span>
-                      </a>
-                    
                   </article>
                   <article class="post-next col-6">
                     
                     
-                      <a href="/2023/08/24/%E5%9B%BE%E7%89%87%E5%8A%A0%E5%AF%86/" title="图片加密">
-                        <span class="hidden-mobile">图片加密</span>
+                      <a href="/2024/02/14/Real-Time-Rendering-4th-Edition-%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B00-%E5%9B%BE%E5%BD%A2%E6%B8%B2%E6%9F%93%E7%AE%A1%E7%BA%BF/" title="Real-Time Rendering 4th Edition 阅读笔记0 图形渲染管线">
+                        <span class="hidden-mobile">Real-Time Rendering 4th Edition 阅读笔记0 图形渲染管线</span>
                         <span class="visible-mobile">下一篇</span>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
@@ -432,7 +417,7 @@
         var options = Object.assign(
           {"clientID":"d7acafdd02d6c7911eb6","clientSecret":"2bf399e67a4efef324327d42b645bca1503c52c5","repo":"Catfootbeats.github.io","owner":"Catfootbeats","admin":["Catfootbeats"],"language":"zh-CN","labels":["Gitalk"],"perPage":10,"pagerDirection":"last","distractionFreeMode":false,"createIssueManually":true,"proxy":"https://cors-anywhere.azm.workers.dev/https://github.com/login/oauth/access_token"},
           {
-            id: '515d59af34a65bb7a722b70ac63f9d0d'
+            id: '6f466dbca2a959935eefcc89f3bd6161'
           }
         )
         var gitalk = new Gitalk(options);

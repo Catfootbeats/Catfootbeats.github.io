@@ -4,13 +4,27 @@
   
   
   <entry>
-    <title>test</title>
-    <link href="/2024/06/19/test/"/>
-    <url>/2024/06/19/test/</url>
+    <title>笔电安装openSUSE折腾NVIDIA驱动</title>
+    <link href="/2024/11/23/%E7%AC%94%E7%94%B5%E5%AE%89%E8%A3%85openSUSE%E6%8A%98%E8%85%BENVIDIA%E9%A9%B1%E5%8A%A8/"/>
+    <url>/2024/11/23/%E7%AC%94%E7%94%B5%E5%AE%89%E8%A3%85openSUSE%E6%8A%98%E8%85%BENVIDIA%E9%A9%B1%E5%8A%A8/</url>
     
-    <content type="html"><![CDATA[]]></content>
+    <content type="html"><![CDATA[<h1 id="笔电安装openSUSE折腾NVIDIA驱动"><a href="#笔电安装openSUSE折腾NVIDIA驱动" class="headerlink" title="笔电安装openSUSE折腾NVIDIA驱动"></a>笔电安装openSUSE折腾NVIDIA驱动</h1><p>安装驱动<a href="https://zh.opensuse.org/SDB:NVIDIA_%E9%A9%B1%E5%8A%A8">SDB:NVIDIA_驱动</a></p><p>配置独显<a href="https://zh.opensuse.org/SDB:NVIDIA_PRIME_Render_Offload">SDB:NVIDIA PRIME Render Offload</a></p><p>装上显卡驱动之后发现笔电的HDMI接口不能输出了（Wayland），但是x11可以输出。</p><p>x11显示器输出并不可以单独调整dpi。</p><p>为了单独修改dpi，只能使用Wayland。</p><p>解决HDMI输出问题就要使用Offload来调用独显输出，安全模式还要配置一下NVIDIA驱动的密钥。</p><p>使用Offload需要在内核参数里面加一条<code>nvidia-drm.modeset=1</code></p><p>然后就能使用独显输出的HDMI接口了。</p>]]></content>
     
     
+    <categories>
+      
+      <category>linux</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>linux</tag>
+      
+      <tag>驱动</tag>
+      
+    </tags>
     
   </entry>
   
