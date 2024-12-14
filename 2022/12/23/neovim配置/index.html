@@ -16,15 +16,15 @@
   <meta name="author" content="Catfootbeats">
   <meta name="keywords" content="">
   
-    <meta name="description" content="neovim配置配置地址 #插件 更新安装 PackerSync  卸载插件 把要卸载的插件注释或者删除掉 PackerClean   #操作指南基础 保存 Ctrl + S  退出 Ctrl + Q  插入模式光标移动 左 Ctrl + [ 右 Ctrl + ] 上 Ctrl + P 下 Ctrl + N  退出插入模式 jk  Alt + hjkl选择窗口  s v&#x2F;h 分屏  s c 关闭分">
+    <meta name="description" content="neovim配置配置地址 如何配置 CMake Path in nvim-dap.lua 安装LLVM使用Clangd pip install cmake-language-server 安装cmake lsp ripgrep lua-language-server 安装lua lsp gdb 14+ fzf  TODO  DAP (gdb) 适配Windows #唉Windows Magic（；">
 <meta property="og:type" content="article">
 <meta property="og:title" content="neovim配置">
 <meta property="og:url" content="https://catfootbeats.github.io/2022/12/23/neovim%E9%85%8D%E7%BD%AE/index.html">
 <meta property="og:site_name" content="Catfootbeats&#39;Blog(～￣▽￣)～">
-<meta property="og:description" content="neovim配置配置地址 #插件 更新安装 PackerSync  卸载插件 把要卸载的插件注释或者删除掉 PackerClean   #操作指南基础 保存 Ctrl + S  退出 Ctrl + Q  插入模式光标移动 左 Ctrl + [ 右 Ctrl + ] 上 Ctrl + P 下 Ctrl + N  退出插入模式 jk  Alt + hjkl选择窗口  s v&#x2F;h 分屏  s c 关闭分">
+<meta property="og:description" content="neovim配置配置地址 如何配置 CMake Path in nvim-dap.lua 安装LLVM使用Clangd pip install cmake-language-server 安装cmake lsp ripgrep lua-language-server 安装lua lsp gdb 14+ fzf  TODO  DAP (gdb) 适配Windows #唉Windows Magic（；">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-12-23T10:49:48.000Z">
-<meta property="article:modified_time" content="2022-12-23T10:56:26.401Z">
+<meta property="article:modified_time" content="2024-12-14T11:23:06.504Z">
 <meta property="article:author" content="Catfootbeats">
 <meta property="article:tag" content="neovim">
 <meta name="twitter:card" content="summary_large_image">
@@ -234,7 +234,7 @@
       <span class="post-meta mr-2">
         <i class="iconfont icon-chart"></i>
         
-          1.5k 字
+          3.1k 字
         
       </span>
     
@@ -245,7 +245,7 @@
         
         
         
-          13 分钟
+          27 分钟
         
       </span>
     
@@ -289,131 +289,724 @@
               <div class="markdown-body">
                 
                 <h1 id="neovim配置"><a href="#neovim配置" class="headerlink" title="neovim配置"></a>neovim配置</h1><p><a target="_blank" rel="noopener" href="https://github.com/Catfootbeats/nvim">配置地址</a></p>
-<h1 id="插件"><a href="#插件" class="headerlink" title="#插件"></a>#插件</h1><ul>
-<li><p>更新安装 PackerSync</p>
-</li>
-<li><p>卸载插件 把要卸载的插件注释或者删除掉 PackerClean</p>
-</li>
+<h1 id="如何配置"><a href="#如何配置" class="headerlink" title="如何配置"></a>如何配置</h1><ul>
+<li>CMake Path in nvim-dap.lua</li>
+<li>安装LLVM使用Clangd</li>
+<li>pip install cmake-language-server 安装cmake lsp</li>
+<li>ripgrep</li>
+<li>lua-language-server 安装lua lsp</li>
+<li>gdb 14+</li>
+<li>fzf</li>
 </ul>
-<h1 id="操作指南"><a href="#操作指南" class="headerlink" title="#操作指南"></a>#操作指南</h1><h4 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h4><ul>
-<li><p>保存 <code>Ctrl + S</code></p>
-</li>
-<li><p>退出 <code>Ctrl + Q</code></p>
-</li>
-<li><p>插入模式光标移动</p>
-<p>左 <code>Ctrl + [</code></p>
-<p>右 <code>Ctrl + ]</code></p>
-<p>上 <code>Ctrl + P</code></p>
-<p>下 <code>Ctrl + N</code></p>
-</li>
-<li><p>退出插入模式 <code>jk</code></p>
-</li>
-<li><p><code>Alt + hjkl</code>选择窗口</p>
-</li>
-<li><p><code>s v/h</code> 分屏</p>
-</li>
-<li><p><code>s c</code> 关闭分屏</p>
-</li>
+<h1 id="TODO"><a href="#TODO" class="headerlink" title="TODO"></a>TODO</h1><ul>
+<li><input disabled="" type="checkbox"> DAP (gdb) 适配Windows #唉Windows Magic（；´д｀）ゞ</li>
+<li><input disabled="" type="checkbox"> 快捷键使用Which Key管理</li>
+<li><input checked="" disabled="" type="checkbox"> todo-comments插件</li>
+<li><input checked="" disabled="" type="checkbox"> CMake run.sh快捷键适配Windows</li>
 </ul>
-<h4 id="自动补全cmp"><a href="#自动补全cmp" class="headerlink" title="自动补全cmp"></a>自动补全cmp</h4><ul>
-<li><p><code>Ctrl + j k</code> 上下移动</p>
-</li>
-<li><p><code>Ctrl + f b</code> 滚动描述窗口大小</p>
-</li>
-<li><p><code>Ctrl + Space</code> 好像不管用</p>
-</li>
-<li><p><code>Ctrl + e</code> 关闭边栏</p>
-</li>
-<li><p>回车确认</p>
-</li>
-<li><p><code>tab</code> 比如，确认之后，出现一个方法的模板，填充完名称按Tab跳转到参数，再按跳转到代码块</p>
-</li>
-</ul>
-<p>设置请到 <code>cmp.lua</code></p>
+<h1 id="快捷键和使用方法"><a href="#快捷键和使用方法" class="headerlink" title="快捷键和使用方法"></a>快捷键和使用方法</h1><blockquote>
+<p>快捷键配置在那里？</p>
+</blockquote>
 <ul>
-<li><p><code>formatting</code> 可调整弹出的窗口 <code>source</code> 改变顺序</p>
-</li>
-<li><p><code>ghosttext</code> 水印提示</p>
-</li>
+<li><a href="lua/keymaps.lua">keymaps.lua</a></li>
+<li><a href="lua/config/aerial.lua">aerial.lua</a></li>
+<li><a href="lua/config/bufferline.lua">bufferline.lua</a></li>
+<li><a href="lua/config/hop.lua">hop.lua</a></li>
+<li><a href="lua/config/telescope.lua">telescope.lua</a></li>
+<li><a href="lua/config/toggleterm.lua">toggleterm.lua</a></li>
 </ul>
-<h4 id="LSP"><a href="#LSP" class="headerlink" title="LSP"></a>LSP</h4><ul>
-<li><p><code>:LspInstall</code> 安装的lsp server</p>
-</li>
-<li><p><code>Shift + K</code> 相当于悬停</p>
-</li>
-<li><p><code>gd</code> 走到定义</p>
-</li>
-<li><p><code>gD</code> 走到声明</p>
-</li>
-<li><p><code>gi</code> 走到实现</p>
-</li>
-<li><p><code>Ctrl + k</code> 签名帮助(?)</p>
-</li>
-<li><p><code>gr</code> 引用</p>
-</li>
-<li><p><code>[d</code> <code>]d</code> 前后报错</p>
-</li>
-<li><p><code>&lt;loader&gt;q</code> 错误列表(<loader>目前设置为<code>\</code>)</p>
-</li>
-<li><p><code>&lt;loader&gt;ca</code> 快速修复</p>
-</li>
-<li><p><code>&lt;loader&gt;rn</code> 重命名</p>
-</li>
-<li><p>添加语言支持在 <code>mason.lua</code> 的server加，使用 <code>:LspInstall &lt;server&gt;</code> 命令安装，在settings里面添加设置。</p>
-<p>具体见<a target="_blank" rel="noopener" href="https://github.com/williamboman/mason-lspconfig.nvim">mason-lspconfig.nvim</a>,<a target="_blank" rel="noopener" href="https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md">设置</a></p>
-<p><code>cmd = &#123;DATA_PATH .. &#39;/lspinstall/cmake/venv/bin/&lt;server&gt;&#39;&#125;</code>添加的cmd大概写成这样,文件名不行就试试后面加-ls</p>
-</li>
-<li><p>注：C#提示依赖Visual Studio工程文件</p>
-<p>C++需要导出数据库 <code>cmake -S ./ -B build -DCMAKE_EXPORT_COMPILE_COMMANDS=1</code></p>
-</li>
-</ul>
-<h4 id="CMake相关快捷键"><a href="#CMake相关快捷键" class="headerlink" title="CMake相关快捷键"></a>CMake相关快捷键</h4><ul>
-<li><code>&lt;leader&gt;&lt;leader&gt;s</code> <code>cmake -S . -B build -DCMAKE_EXPORT_COMPILE_COMMANDS=1</code></li>
-<li><code>&lt;leader&gt;&lt;leader&gt;b</code> <code>cmake --build build -j2</code></li>
-<li><code>&lt;leader&gt;&lt;leader&gt;t</code> <code>cmake --build build -j2 --target test</code></li>
-</ul>
-<h4 id="查找功能"><a href="#查找功能" class="headerlink" title="查找功能"></a>查找功能</h4><ul>
-<li><code>&lt;leader&gt;ff</code> 查找文件</li>
-<li><code>&lt;leader&gt;fg</code> 查找片段</li>
-<li><code>&lt;leader&gt;fb</code> 在打开的文件里面查找</li>
-<li><code>&lt;leader&gt;fh</code> 查找帮助文档</li>
-<li><code>&lt;leader&gt;sf</code></li>
-<li><code>&lt;leader&gt;/</code> 不知道有啥意义</li>
-<li>lua\user\plugin-config\telescope.lua 自己看罢(</li>
-</ul>
-<h4 id="Debugger"><a href="#Debugger" class="headerlink" title="Debugger"></a>Debugger</h4><ul>
-<li>DIInstall <code>Tab</code> 安装 DIList 验证</li>
-</ul>
-<h4 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h4><ul>
-<li><p><code>&lt;leader&gt;py</code> 运行python</p>
-</li>
-<li><p>在文件浏览器按<code>s</code>可以运行程序</p>
-</li>
-<li><p>Linux或者OSX可以安装 <code>lolcat</code> 去 <code>dashboard.lua</code> 开启彩虹首页</p>
-</li>
-<li><p>可在项目目录里面创建一个 <code>run.bat</code> 或者 <code>run.sh</code> ,使用 <code>&lt;leader&gt;&lt;leader&gt;r</code> 运行</p>
-</li>
-<li><p><code>:checkhealth</code> 检查是否配置完成</p>
-</li>
-<li><p><code>;</code> 或者普通模式 <code>ff</code> 格式化代码</p>
-</li>
-<li><p><code>Ctrl + \</code> 打开终端 Windows Terminal也可以直接 <code>Win + 飘号键</code> 打开Windows Terminal自带的终端</p>
-</li>
-<li><p>Gitsigns命令 git功能</p>
-</li>
-<li><p><code>gcc</code>注释</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://github.com/simrat39/symbols-outline.nvim">文件大纲</a> <code>&lt;leader&gt;o</code> 开启关闭大纲</p>
-</li>
-<li><p>命令模式输入Tab提示</p>
-</li>
-<li><p><code>Enter</code>增量选择 <code>Backspace</code>减量选择</p>
-</li>
-<li><p>代码格式化 <code>=</code> 全部格式化 <code>ggvG=</code> or <code>gg=G</code></p>
-</li>
-<li><p>折叠代码 <code>zc</code> <code>zo</code></p>
-</li>
-</ul>
+<h2 id="基础"><a href="#基础" class="headerlink" title="基础"></a>基础</h2><blockquote>
+<p><code>&lt;leader&gt;</code> 按键默认为 &#96; #就是键盘左上角的那个</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>键位</th>
+<th>功能 <em>(插件)</em></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>space</code> 输入字母</td>
+<td>选择光标转移位置 <em>(hop)</em></td>
+</tr>
+<tr>
+<td><code>Ctrl</code> + <code>Insert</code></td>
+<td>复制</td>
+</tr>
+<tr>
+<td><code>Shift</code> + <code>Insert</code></td>
+<td>粘贴</td>
+</tr>
+<tr>
+<td><code>jk</code> <code>kj</code></td>
+<td>退出插入模式</td>
+</tr>
+<tr>
+<td>Visual Mode <code>&lt;</code> <code>&gt;</code></td>
+<td>可行左移右移一个Tab</td>
+</tr>
+<tr>
+<td><code>q</code>&#x2F;<code>ZZ</code></td>
+<td>退出neovim</td>
+</tr>
+<tr>
+<td><code>Q</code></td>
+<td>宏孩儿</td>
+</tr>
+<tr>
+<td><code>F4</code></td>
+<td>保存所有文件</td>
+</tr>
+<tr>
+<td><code>gh</code>&#x2F;<code>^</code></td>
+<td>去句首</td>
+</tr>
+<tr>
+<td><code>gl</code>&#x2F;<code>$</code></td>
+<td>句末</td>
+</tr>
+<tr>
+<td><code>gm</code></td>
+<td>句中</td>
+</tr>
+<tr>
+<td><code>zz</code></td>
+<td>至于中央</td>
+</tr>
+<tr>
+<td><code>w</code></td>
+<td>word</td>
+</tr>
+<tr>
+<td><code>e</code></td>
+<td>end</td>
+</tr>
+<tr>
+<td><code>b</code></td>
+<td>back</td>
+</tr>
+<tr>
+<td><code>Insert</code></td>
+<td>压扁模式(Zen Mode)</td>
+</tr>
+</tbody></table>
+<h3 id="选择"><a href="#选择" class="headerlink" title="选择"></a>选择</h3><table>
+<thead>
+<tr>
+<th>键位</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>vac</code></td>
+<td>选中当前类</td>
+</tr>
+<tr>
+<td><code>vic</code></td>
+<td>选中当前类体内</td>
+</tr>
+<tr>
+<td><code>vaf</code></td>
+<td>选中当前函数</td>
+</tr>
+<tr>
+<td><code>vif</code></td>
+<td>选中当前函数体</td>
+</tr>
+<tr>
+<td><code>vab</code></td>
+<td>选中当前块</td>
+</tr>
+<tr>
+<td><code>vib</code></td>
+<td>选中当前块中内容</td>
+</tr>
+<tr>
+<td><code>vad</code></td>
+<td>选中当前分支</td>
+</tr>
+<tr>
+<td><code>vid</code></td>
+<td>选中当前分支块或条件</td>
+</tr>
+<tr>
+<td><code>vae</code></td>
+<td>选中当前循环</td>
+</tr>
+<tr>
+<td><code>vie</code></td>
+<td>选中当前循环体</td>
+</tr>
+<tr>
+<td><code>vai</code></td>
+<td>选中当前函数调用语句</td>
+</tr>
+<tr>
+<td><code>vii</code></td>
+<td>选中当前函数调用语句的参数列表</td>
+</tr>
+<tr>
+<td><code>vap</code></td>
+<td>选中当前参数（包括空格和逗号）</td>
+</tr>
+<tr>
+<td><code>vip</code></td>
+<td>选中当前参数（不包括空格和逗号）</td>
+</tr>
+<tr>
+<td><code>vah</code></td>
+<td>选中当前赋值语句</td>
+</tr>
+<tr>
+<td><code>vih</code></td>
+<td>选中当前赋值语句中的左侧值</td>
+</tr>
+<tr>
+<td><code>var</code></td>
+<td>选中当前返回语句</td>
+</tr>
+<tr>
+<td><code>vir</code></td>
+<td>选中当前返回语句返回值</td>
+</tr>
+<tr>
+<td><code>vin</code></td>
+<td>选中当前数字</td>
+</tr>
+<tr>
+<td><code>vat</code></td>
+<td>选中当前注释块</td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td>扩大选择</td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>缩小选择</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>举一反三：dat 删除当前注释块，cip 修改当前参数</p>
+</blockquote>
+<h3 id="移动"><a href="#移动" class="headerlink" title="移动"></a>移动</h3><table>
+<thead>
+<tr>
+<th>键位</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>]c</code></td>
+<td>下一个类开头</td>
+</tr>
+<tr>
+<td><code>[c</code></td>
+<td>上一个类开头</td>
+</tr>
+<tr>
+<td><code>]C</code></td>
+<td>下一个类结尾</td>
+</tr>
+<tr>
+<td><code>[C</code></td>
+<td>上一个类结尾</td>
+</tr>
+<tr>
+<td><code>]f</code></td>
+<td>下一个函数开头</td>
+</tr>
+<tr>
+<td><code>[f</code></td>
+<td>上一个函数开头</td>
+</tr>
+<tr>
+<td><code>]F</code></td>
+<td>下一个函数结尾</td>
+</tr>
+<tr>
+<td><code>[F</code></td>
+<td>上一个函数结尾</td>
+</tr>
+<tr>
+<td><code>&lt;Space&gt;</code></td>
+<td>全屏任意移动</td>
+</tr>
+</tbody></table>
+<h3 id="换位"><a href="#换位" class="headerlink" title="换位"></a>换位</h3><table>
+<thead>
+<tr>
+<th>键位</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>mh</code></td>
+<td>左移参数</td>
+</tr>
+<tr>
+<td><code>ml</code></td>
+<td>右移参数</td>
+</tr>
+<tr>
+<td><code>mj</code></td>
+<td>下移当前语句</td>
+</tr>
+<tr>
+<td><code>mk</code></td>
+<td>上移当前语句</td>
+</tr>
+<tr>
+<td><code>maf</code></td>
+<td>下移当前函数</td>
+</tr>
+<tr>
+<td><code>mif</code></td>
+<td>上移当前函数</td>
+</tr>
+<tr>
+<td><code>mac</code></td>
+<td>下移当前类</td>
+</tr>
+<tr>
+<td><code>mic</code></td>
+<td>上移当前类</td>
+</tr>
+</tbody></table>
+<h3 id="括号"><a href="#括号" class="headerlink" title="括号"></a>括号</h3><blockquote>
+<p>可视（VISUAL）模式中：</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>键位</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>s)</code></td>
+<td>给当前选中内容包上 (选中内容) 括号</td>
+</tr>
+<tr>
+<td><code>s&#125;</code></td>
+<td>给当前选中内容包上 {选中内容} 括号</td>
+</tr>
+<tr>
+<td><code>s]</code></td>
+<td>给当前选中内容包上 [选中内容] 括号</td>
+</tr>
+<tr>
+<td><code>s&gt;</code></td>
+<td>给当前选中内容包上 &lt;选中内容&gt; 尖括号</td>
+</tr>
+<tr>
+<td><code>s&#39;</code></td>
+<td>给当前选中内容包上 ‘选中内容’ 单引号</td>
+</tr>
+<tr>
+<td><code>s&quot;</code></td>
+<td>给当前选中内容包上 “选中内容” 双引号</td>
+</tr>
+<tr>
+<td><code>stspan</code></td>
+<td>给当前选中内容包上 <span>选中内容</span> 标签</td>
+</tr>
+<tr>
+<td><code>sta href=&quot;b.html&quot;</code></td>
+<td>给当前选中内容包上 <a href="b.html">选中内容</a> 标签</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>普通（NORMAL）模式中：</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>键位</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>ysi&lt;range&gt;&lt;brace&gt;</code></td>
+<td>添加括号</td>
+</tr>
+<tr>
+<td><code>cs&lt;oldbrace&gt;&lt;newbrace&gt;</code></td>
+<td>改变括号</td>
+</tr>
+<tr>
+<td><code>ds&lt;brace&gt;</code></td>
+<td>删除括号</td>
+</tr>
+</tbody></table>
+<h2 id="窗口操作"><a href="#窗口操作" class="headerlink" title="窗口操作"></a>窗口操作</h2><table>
+<thead>
+<tr>
+<th>键位</th>
+<th>功能 <em>(插件)</em></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>Alt</code> + <code>Up</code> <code>Down</code> <code>Left</code> <code>Right</code></td>
+<td>调整窗口大小</td>
+</tr>
+<tr>
+<td><code>Alt</code> + <code>h</code> <code>j</code> <code>k</code> <code>l</code></td>
+<td>切换窗口焦点</td>
+</tr>
+<tr>
+<td><code>Alt</code> + <code>m</code></td>
+<td>打开文件管理器窗口 <em>(NvimTree)</em></td>
+</tr>
+</tbody></table>
+<h2 id="Code-Action"><a href="#Code-Action" class="headerlink" title="Code Action"></a>Code Action</h2><table>
+<thead>
+<tr>
+<th>键位</th>
+<th>功能 <em>(插件)</em></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>gso</code> &#x2F; <code>F12</code></td>
+<td>打开大纲, 使用<code>&#123;</code> <code>&#125;</code>在函数之间跳转 <em>(aerial)</em></td>
+</tr>
+<tr>
+<td><code>F9</code></td>
+<td>错误列表</td>
+</tr>
+<tr>
+<td><code>g=</code>&#x2F;<code>F16</code></td>
+<td>格式化代码</td>
+</tr>
+<tr>
+<td><code>K</code></td>
+<td>查看文档</td>
+</tr>
+<tr>
+<td><code>gK</code></td>
+<td>函数签名</td>
+</tr>
+<tr>
+<td><code>gw</code></td>
+<td>代码修复</td>
+</tr>
+<tr>
+<td><code>gn</code></td>
+<td>重命名变量(修改)</td>
+</tr>
+<tr>
+<td><code>gN</code></td>
+<td>重命名变量(重写)</td>
+</tr>
+<tr>
+<td><code>gd</code></td>
+<td>go definitions 符号定义</td>
+</tr>
+<tr>
+<td><code>gD</code></td>
+<td>go declaration 符号声明</td>
+</tr>
+<tr>
+<td><code>gss</code></td>
+<td>开关静态分析错误列表</td>
+</tr>
+<tr>
+<td><code>gsl</code>&#x2F;<code>F6</code></td>
+<td>开关编译器报错</td>
+</tr>
+<tr>
+<td><code>gsd</code></td>
+<td>当前光标下静态分析错误</td>
+</tr>
+<tr>
+<td><code>gsi</code></td>
+<td>开关参数虚文字 <em>(Inlay Hint)</em></td>
+</tr>
+<tr>
+<td><code>gsu</code></td>
+<td>重启LSP</td>
+</tr>
+<tr>
+<td><code>gy</code></td>
+<td>查找类型定义</td>
+</tr>
+<tr>
+<td><code>gr</code></td>
+<td>查找所以引用</td>
+</tr>
+<tr>
+<td><code>gY</code></td>
+<td>查找函数实现</td>
+</tr>
+<tr>
+<td><code>gz</code></td>
+<td>查看全部</td>
+</tr>
+<tr>
+<td><code>gst</code></td>
+<td>查看类型继承图(派生类)</td>
+</tr>
+<tr>
+<td><code>gsT</code></td>
+<td>查看类型继承图(基类)</td>
+</tr>
+<tr>
+<td><code>go</code>&#x2F;<code>gO</code></td>
+<td>跳转到头文件</td>
+</tr>
+<tr>
+<td><code>g</code>+<code>Ctrl</code>+<code>o</code></td>
+<td>跳转到源文件</td>
+</tr>
+<tr>
+<td><code>Ctrl</code>+<code>o</code></td>
+<td>跳转回来</td>
+</tr>
+<tr>
+<td><code>Shift</code> + <code>Tab</code></td>
+<td>打开之前关闭的文件</td>
+</tr>
+<tr>
+<td><code>gcc</code></td>
+<td>注释&#x2F;取消注释选中行</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>p.s. <a href="lua/config/telescope.lua">telescope.lua</a></p>
+</blockquote>
+<h2 id="运行和调试"><a href="#运行和调试" class="headerlink" title="运行和调试"></a>运行和调试</h2><h3 id="CMake-cmake-tools"><a href="#CMake-cmake-tools" class="headerlink" title="CMake (cmake-tools)"></a>CMake <em>(cmake-tools)</em></h3><table>
+<thead>
+<tr>
+<th>键位</th>
+<th>CMake</th>
+<th>无CMake</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>F5</code> &#x2F; <code>cmr</code></td>
+<td>CMakeRun</td>
+<td><code>./run.sh</code>&#x2F;<code>./run.bat</code></td>
+</tr>
+<tr>
+<td><code>F17</code></td>
+<td>CMakeStopRunner</td>
+<td><code>Ctrl</code> + <code>c</code></td>
+</tr>
+<tr>
+<td><code>cmb</code></td>
+<td>CMakeBuild</td>
+<td><code>make</code></td>
+</tr>
+<tr>
+<td><code>cmc</code></td>
+<td>CMakeGenerate</td>
+<td><code>./configure</code></td>
+</tr>
+<tr>
+<td><code>cms</code></td>
+<td>CMakeStopRunner</td>
+<td><code>Ctrl</code> + <code>c</code></td>
+</tr>
+</tbody></table>
+<h2 id="插件"><a href="#插件" class="headerlink" title="插件"></a>插件</h2><h3 id="标签栏-BufferLine"><a href="#标签栏-BufferLine" class="headerlink" title="标签栏 (BufferLine)"></a>标签栏 <em>(BufferLine)</em></h3><table>
+<thead>
+<tr>
+<th>键位</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>g</code>+<code>Tab</code></td>
+<td>Pin页面</td>
+</tr>
+<tr>
+<td><code>g</code>+<code>Space</code></td>
+<td>挑选页面</td>
+</tr>
+<tr>
+<td><code>Ctrl</code>+<code>h</code>&#x2F;<code>l</code></td>
+<td>左右选择页面</td>
+</tr>
+<tr>
+<td><code>gp</code></td>
+<td>选择一个页面删除</td>
+</tr>
+<tr>
+<td><code>g</code>+<code>BS</code></td>
+<td>删除页面</td>
+</tr>
+<tr>
+<td><code>g</code>+<code>Shift</code>+<code>Tab</code></td>
+<td>删除其他页面</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>p.s. 足够了，剩下的看<a href="lua/config/bufferline.lua">bufferline.lua</a>罢</p>
+</blockquote>
+<h3 id="查找-Telescope"><a href="#查找-Telescope" class="headerlink" title="查找 (Telescope)"></a>查找 <em>(Telescope)</em></h3><table>
+<thead>
+<tr>
+<th>键位</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>&lt;leader&gt;</code>+<code>l</code></td>
+<td>查找文件</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code>+<code>L</code></td>
+<td>查找文件（仅包含 CMake 目标所直接包含的源和头文件）</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code>+<code>O</code></td>
+<td>查找文件（仅包含 CMakeLists.txt 和 *.cmake 类文件）</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code>+<code>i</code></td>
+<td>查找 git 仓库中的文件</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code>+<code>o</code></td>
+<td>查找最近打开过的文件</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code>+<code>p</code></td>
+<td>查找 git status 中的文件</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code>+<code>k</code></td>
+<td>查找当前项目文件中的文字</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code>+<code>.</code></td>
+<td>模糊查找当前文件中的文字</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code>+<code>b</code></td>
+<td>查找所有已打开文件</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code>+<code>B</code></td>
+<td>查找当前 Tab 中所有已打开文件</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code>+<code>j</code></td>
+<td>查找 vim 的跳转记录</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code>+<code>m</code></td>
+<td>查找 vim 的标记</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code>+<code>/</code></td>
+<td>查找 &#x2F; 的搜索记录</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code>+<code>:</code></td>
+<td>查找 vim 命令历史记录</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code>+<code>;</code></td>
+<td>查找所有 vim 命令</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code>+<code>?</code></td>
+<td>查找帮助文档</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code>+<code>t</code></td>
+<td>查找 todo 等事项(需要todo-comments)</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code>+<code>z</code></td>
+<td>查找本文件中所有文本对象</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code>+<code>x</code></td>
+<td>查找本文件中所有符号</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code>+<code>c</code></td>
+<td>查找 git 仓库的 commit 历史</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code>+<code>v</code></td>
+<td>查找 git 仓库的所有分支</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code>+<code>a</code></td>
+<td>查找本文件中所有静态分析报错</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code>+<code>q</code></td>
+<td>查找本文件中所有动态编译报错</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code>+<code>n</code></td>
+<td>查看所有 Vim 通知</td>
+</tr>
+<tr>
+<td><code>&lt;leader&gt;</code>+<code>&lt;leader&gt;</code></td>
+<td>模糊查询</td>
+</tr>
+</tbody></table>
+<h3 id="ToDo-TodoComment"><a href="#ToDo-TodoComment" class="headerlink" title="ToDo (TodoComment)"></a>ToDo <em>(TodoComment)</em></h3><table>
+<thead>
+<tr>
+<th>键位</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>]t</code></td>
+<td>下一个todo comment</td>
+</tr>
+<tr>
+<td><code>[t</code></td>
+<td>上一个todo comment</td>
+</tr>
+</tbody></table>
+<p>使用方法:</p>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs awk"><span class="hljs-regexp">//</span>TODO:<br><span class="hljs-regexp">//</span>FIX:<br><span class="hljs-regexp">//</span>HACK:<br><span class="hljs-regexp">//</span>TEST:<br><span class="hljs-regexp">//</span>PERF:<br><span class="hljs-regexp">//</span>NOTE:<br><span class="hljs-regexp">//</span>WARN:<br></code></pre></td></tr></table></figure>
+
+<h3 id="Git-Neogit"><a href="#Git-Neogit" class="headerlink" title="Git (Neogit)"></a>Git <em>(Neogit)</em></h3><blockquote>
+<p>#有点鸡肋</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>键位</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>F10</code></td>
+<td>打开neogit</td>
+</tr>
+</tbody></table>
+<h3 id="终端-ToggleTerm"><a href="#终端-ToggleTerm" class="headerlink" title="终端 (ToggleTerm)"></a>终端 <em>(ToggleTerm</em>)</h3><blockquote>
+<p>#有点鸡肋，不如直接打开新的终端窗口</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>键位</th>
+<th>功能</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>F8</code></td>
+<td>打开终端</td>
+</tr>
+</tbody></table>
+<h3 id="Markdown预览-MarkdownPreview"><a href="#Markdown预览-MarkdownPreview" class="headerlink" title="Markdown预览 (MarkdownPreview)"></a>Markdown预览 <em>(MarkdownPreview)</em></h3><blockquote>
+<p>#有点鸡肋，不如用vscode</p>
+</blockquote>
+<p>使用方法:</p>
+<figure class="highlight clojure"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs clojure"><span class="hljs-symbol">:MarkdownPreviewToggle</span><br></code></pre></td></tr></table></figure>
+
+<h1 id="添加LSP-Mason和Lspconfig-TODO"><a href="#添加LSP-Mason和Lspconfig-TODO" class="headerlink" title="添加LSP Mason和Lspconfig TODO:"></a>添加LSP Mason和Lspconfig TODO:</h1><p>参考<a target="_blank" rel="noopener" href="https://github.com/archibate/vimrc">archibate&#x2F;vimrc</a></p>
 
                 
               </div>
